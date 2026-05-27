@@ -1,0 +1,19 @@
+package main_test
+
+import (
+	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"strings"
+	"sync"
+	"testing"
+	"context"
+
+	"dailyassignment/controllers"
+	"dailyassignment/middleware"
+	"dailyassignment/repositories"
+)
+
+func TestBookingConcurrency(t *testing.T) {
+	repo := repositories.NewRepository()
+	
